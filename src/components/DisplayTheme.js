@@ -1,10 +1,11 @@
 
-import {useAppContext} from "../context/app-context";
+import {useThemeContext} from "../context/theme-context";
 export const DisplayTheme = () => {
-    const context = useAppContext();
+    const [state] = useThemeContext();
+    console.log('DisplayTheme: render');
     return(
         <>
-            {context.theme}
+            {state.theme}
         </>
     );
 }

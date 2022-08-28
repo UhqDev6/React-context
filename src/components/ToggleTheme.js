@@ -1,12 +1,12 @@
 
-import {useAppContext} from "../context/app-context";
+import {useThemeContext} from "../context/theme-context";
 export const ToggleTheme = () => {
-    const context = useAppContext();
+    const [, dispatch] = useThemeContext();
     return(
         <div>
             <button
                 onClick={()=> {
-                    context.setTheme(context.theme === 'light' ? 'dark' : 'light');
+                    dispatch({type: 'toggleTheme'})
                 }}
             >Toggle Theme</button>
         </div>
